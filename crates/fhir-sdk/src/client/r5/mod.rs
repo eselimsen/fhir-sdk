@@ -281,7 +281,7 @@ impl Client<FhirR5> {
 	/// use fhir_model::r5::resources::Person;
 	/// use fhir_sdk::client::{Client, Page, PagedSearchMethod, RequestSettings, SearchParameters};
 	///
-	/// async fn do_search() {
+	/// async fn do_search() -> Result<(), Box<dyn std::error::Error>> {
 	///     let client = Client::builder()
 	///         .base_url("http://127.0.0.1:8100/fhir/".parse().unwrap())
 	///         .request_settings(RequestSettings::default())
@@ -299,6 +299,7 @@ impl Client<FhirR5> {
 	///             println!("No next page");
 	///         }
 	///     }
+	///     Ok(())
 	/// }
 	///
 	/// ```
